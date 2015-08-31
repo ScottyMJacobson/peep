@@ -400,7 +400,7 @@ class DownloadedReq(object):
             whl_package_name, version, _rest = filename.split('-', 2)
             # Do the alteration to package_name from PEP 427:
             our_package_name = re.sub(r'[^\w\d.]+', '_', package_name, re.UNICODE)
-            if whl_package_name != our_package_name and whl_package_name.lower() != our_package_name.lower():
+            if whl_package_name.lower() != our_package_name.lower():
                 give_up(filename, whl_package_name)
             return version
 
